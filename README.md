@@ -22,6 +22,7 @@ To get a local copy up and running follow these simple example steps:
 - Run `bundle install` to install dependencies
 - Run `rails s` to start the server
 - Run `rails db:create` and `rails db:migrate` to set up the database
+- Run `bundle exec rspec` to run tests
 
 
 ## Author
