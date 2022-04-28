@@ -21,6 +21,7 @@ To get a local copy up and running follow these simple example steps:
 - Go to the folder `cd blog-app`
 - Run `bundle install` to install dependencies
 - Run `rails s` to start the server
+- Run `rails db:create` and `db:migrate` to set up the database
 
 
 ## Author
