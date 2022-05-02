@@ -68,6 +68,9 @@ group :development do
   # Better errors
   gem 'better_errors', '~> 2.9', '>= 2.9.1'
   gem 'binding_of_caller', '~> 1.0'
+
+  #Diplay tables in database nicely 
+  gem 'hirb'
 end
 
 group :test do
