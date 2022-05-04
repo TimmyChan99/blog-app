@@ -1,0 +1,33 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.user {
+	display: flex;
+	justify-content: space-evenly;
+	margin: 40px 0;
+	height: 90px;
+}
+
+.user_photo,
+.user_info {
+	border: 1px solid black;
+	width: 20%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	padding: 20px;
+	
+}
+
+.user_info {
+	width: 60%;
+}
+
+.user_info p {
+	align-self: flex-end;
+
+}
