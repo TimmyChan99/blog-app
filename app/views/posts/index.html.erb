@@ -1,4 +1,5 @@
 <div class="posts_page">
+<button><%= link_to "create a post", new_user_post_path %></button>
 	<%= render partial: "partials/user", locals: { user: @user } %>
 	<ul class="posts_list">
 	  <% @posts.each do |post| %>

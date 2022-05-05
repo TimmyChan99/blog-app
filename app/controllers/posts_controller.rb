@@ -10,4 +10,8 @@ class PostsController < ApplicationController
     @comments = @post.recent_comments
     @users = User.all
   end
+
+  def new
+    @post = Post.new
+  end
 end
