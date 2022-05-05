@@ -1,0 +1,36 @@
+.user_page {
+	display: flex;
+	flex-direction: column;
+	
+}
+
+.user_bio,
+.posts_list {
+	margin: auto;
+	list-style: none;
+	width: 80%;
+}
+
+.user_bio,
+li {
+	border: 1px solid black;
+  margin: 20px auto;
+	min-height: 100px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 15px;
+}
+
+.posts_list li small {
+	align-self: flex-end;
+}
+
+
+.user_page button {
+	align-self: center;
+	width: 30%;
+	background: none;
+  padding: 10px;
+	border: 1px solid black;
+}

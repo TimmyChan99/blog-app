@@ -3,5 +3,9 @@ class UsersController < ApplicationController
   @users = User.all
   end
 
-  def show; end
+  def show
+    console
+  @user = User.find(params[:id])
+  @posts = @user.recent_tree_posts
+  end
 end

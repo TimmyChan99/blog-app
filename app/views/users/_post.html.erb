@@ -1,0 +1,10 @@
+<li>
+
+<h4>Post#<%= post.id %> </h4>
+ <p> <%= post.text %> </p>
+ <small>
+ Comments: <%= post.comments_counter || 0 %>, 
+ <span>Likes: <%= post.likes_counter || 0 %></span>
+ </small>
+
+</li>
