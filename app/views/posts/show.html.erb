@@ -12,4 +12,6 @@
 	<div class="post_comment">
 	    <%= render partial: "partials/comment", locals: { comments: @comments } %>
 	</div>
+
+	<button><%= link_to "Add new comment", new_user_post_comment_path(@post.author, @post.id) %><button>
 </div>
