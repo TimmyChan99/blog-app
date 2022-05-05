@@ -1,9 +1,5 @@
-<h1>Create a new post</h1>
+<h1 class='headline'>Create a new post</h1>
 
-<% flash.each do |type, msg| %>
-  <div>
-    <%= msg %>
-  </div>
-<% end %>
+<%= render partial: "partials/flashmsg" %>
 
 <%= render partial: "partials/form" %>

@@ -1,4 +1,4 @@
-<%= form_with model: @post, method: :post, url: user_posts_path, scope: :post, local: true do |f| %>
+<%= form_with model: @post, method: :post, url: user_posts_path, scope: :post, local: true, class: 'the_form' do |f| %>
 
 <div>
 <%= f.label :title %><br>
