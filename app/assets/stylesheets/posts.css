@@ -1,5 +1,6 @@
 .user_page
-.posts_page {
+.posts_page,
+.post_page {
 	display: flex;
 	flex-direction: column;	
 }
@@ -28,14 +29,38 @@ li {
 
 
 .user_page button {
-	align-self: center;
+	position: relative;
+	left: 30vw;
+	right: 30vw;
 	width: 30%;
 	background: none;
   padding: 10px;
 	border: 1px solid black;
 }
 
+.post,
 .comments {
 	border: 1px solid black;
 	padding: 10px;
+}
+
+.post_page {
+ width: 80%;
+ margin: 20px auto;
+}
+
+.post {
+	min-height: 150px;
+	position: relative;
+	margin-bottom: 10px;
+}
+
+.comments_likes {
+position: absolute;
+right: 5px;
+top: 10px;
+}
+
+.post article {
+	margin-top: 30px;
 }

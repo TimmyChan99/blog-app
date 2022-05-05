@@ -5,5 +5,9 @@ class PostsController < ApplicationController
     @posts = Post.where(['author_id = :id', { id: params[:user_id].to_s }])
   end
 
-  def show; end
+  def show
+  @post = Post.find(params[:id])
+  @comments = @post.recent_comments
+  @users = User.all
+  end
 end
