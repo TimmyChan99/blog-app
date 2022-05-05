@@ -1,17 +1,9 @@
-
-
 <div class="posts_page">
 	<%= render partial: "users/user", locals: { user: @user } %>
-	
 	<ul class="posts_list">
-	 <% @posts.each do |post| %>
-	
-	
-	 <%= render partial: "users/post", locals: { post: post } %>
-	 <%= render partial: "posts/comment", locals: { comments: post.recent_comments } %>
-		
-	 <% end %>
-	
-	</ul>
-	
+	  <% @posts.each do |post| %>
+	    <%= render partial: "users/post", locals: { post: post } %>
+	    <%= render partial: "posts/comment", locals: { comments: post.recent_comments } %>
+	  <% end %>	
+	</ul>	
 </div>

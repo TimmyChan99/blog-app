@@ -1,28 +1,19 @@
-
 <div class="user_page">
-	<div class="user">
-	
+	<div class="user">	
 		<%= image_tag(@user.photo, alt: "user photo", class: "user_photo") %>
-	
 		<div class="user_info">
-			<h2>
-			<%= link_to @user.name, user_path(@user.id) %>
-			</h2>		
+			<h2><%= link_to @user.name, user_path(@user.id) %></h2>		
 			<p>Number of posts: <%= @user.posts_counter %></p>
 		</div>
-	</div>
-		
+	</div>		
 	<div class="user_bio">
 		<h4>Bio</h4>
 		<article> <%= @user.bio %> </article>
 	</div>
-	
 	<ul class="posts_list">
-	<% @posts.each do |post| %>
-		<%= render partial: "users/post", locals: { post: post } %>
-	<% end %>
-	</ul>
-	
-	<button><%= link_to "See all posts", user_posts_path(@user.id) %></button>
-	
+	  <% @posts.each do |post| %>
+		   <%= render partial: "users/post", locals: { post: post } %>
+	  <% end %>
+	</ul>	
+	<button><%= link_to "See all posts", user_posts_path(@user.id) %></button>	
 </div>

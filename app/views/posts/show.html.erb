@@ -1,19 +1,15 @@
-
 <div class="post_page">
 	<div class="post">
-	<h3>Post #<%= @post.id %> 
-	by 
-	<%= @users[@post.author_id - 1].name%>
-	</h3>
-	<small class="comments_likes">
-	 Comments: <%= @post.comments_counter || 0 %>, 
-	 <span>Likes: <%= @post.likes_counter || 0 %></span>
+	  <h3><%= @post.title %> by <%= @users[@post.author_id - 1].name%></h3>
+	  <small class="comments_likes">
+	    Comments: <%= @post.comments_counter || 0 %>, 
+	    <span>Likes: <%= @post.likes_counter || 0 %></span>
 	 </small>
 	 <article>
-	 <%= @post.text%>
+	    <%= @post.text%>
 	 </article>
 	</div>
 	<div class="post_comment">
-	<%= render partial: "posts/comment", locals: { comments: @comments } %>
+	    <%= render partial: "posts/comment", locals: { comments: @comments } %>
 	</div>
 </div>

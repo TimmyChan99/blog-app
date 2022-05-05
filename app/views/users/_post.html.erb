@@ -1,11 +1,8 @@
 <li>
-
-<h4>
-<%= link_to "Post##{post.id}", user_post_path(post.author, post.id) %>
-</h4>
- <p> <%= post.text %> </p>
- <small>
- Comments: <%= post.comments_counter || 0 %>, 
- <span>Likes: <%= post.likes_counter || 0 %></span>
+  <h4><%= link_to post.title, user_post_path(post.author, post.id) %></h4>
+  <p><%= post.text %></p>
+  <small>
+    Comments: <%= post.comments_counter || 0 %>, 
+    <span>Likes: <%= post.likes_counter || 0 %></span>
  </small>
 </li>
