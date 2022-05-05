@@ -1,0 +1,64 @@
+.user_page .posts_page,
+.post_page {
+  display: flex;
+  flex-direction: column;
+}
+
+.user_bio,
+.posts_list {
+  margin: auto;
+  list-style: none;
+  width: 80%;
+}
+
+.user_bio,
+li {
+  border: 1px solid black;
+  margin: 20px auto;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.posts_list li small {
+  align-self: flex-end;
+}
+
+.user_page button {
+  position: relative;
+  left: 30vw;
+  right: 30vw;
+  width: 30%;
+  background: none;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.post,
+.comments {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.post_page {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.post {
+  min-height: 150px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.comments_likes {
+  position: absolute;
+  right: 5px;
+  top: 10px;
+}
+
+.post article {
+  margin-top: 30px;
+}

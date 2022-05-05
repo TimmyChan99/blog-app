@@ -1,0 +1,9 @@
+<div class="comments">
+<% comments.each do |comment| %>
+<span>
+	<%= @users[comment.author_id - 1].name %> :
+</span>
+<%= comment.text %>
+	<br>
+<% end %>
+</div>
