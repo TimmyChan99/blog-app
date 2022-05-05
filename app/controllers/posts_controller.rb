@@ -12,6 +12,29 @@ class PostsController < ApplicationController
   end
 
   def new
+    console
     @post = Post.new
+  end
+
+  def create
+   
+    @post = Post.new(post_params)
+    @post.author = current_user
+     
+        if @post.save
+          flash[:success] = "Post created successfully"
+          redirect_to user_posts_path(@post.author)
+        else
+          flash[:errors] = "Error: Could not create a post"
+          redirect_back(fallback_location: { action: "new", id: params[:user_id]})
+        end
+    
+     
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :text)
   end
 end
