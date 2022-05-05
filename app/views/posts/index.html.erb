@@ -1,2 +1,17 @@
-<h1>list of posts</h1>
-<h3>post#index</h3>
+
+
+<div class="posts_page">
+	<%= render partial: "users/user", locals: { user: @user } %>
+	
+	<ul class="posts_list">
+	 <% @posts.each do |post| %>
+	
+	
+	 <%= render partial: "users/post", locals: { post: post } %>
+	 <%= render partial: "posts/comment", locals: { comments: post.recent_comments } %>
+		
+	 <% end %>
+	
+	</ul>
+	
+</div>
