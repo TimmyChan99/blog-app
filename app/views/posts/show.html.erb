@@ -14,4 +14,15 @@
 	</div>
 
 	<button><%= link_to "Add new comment", new_user_post_comment_path(@post.author, @post.id) %><button>
+
+<%= form_with model: @comment, url: user_post_likes_path(@post.author, @post.id), scope: :comment do |f| %>
+	 <%= f.submit "Like the post"%>
+	<% end %>
+
+	<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+
 </div>
