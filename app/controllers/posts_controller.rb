@@ -20,10 +20,10 @@ class PostsController < ApplicationController
     @post.author = current_user
 
     if @post.save
-      flash[:success] = 'Post created successfully'
+      flash[:notice] = 'Post created successfully'
       redirect_to user_posts_path(@post.author)
     else
-      flash[:errors] = 'Error: Could not create a post'
+      flash[:alert] = 'Error: Could not create a post'
       redirect_back(fallback_location: { action: 'new', id: params[:user_id] })
     end
   end

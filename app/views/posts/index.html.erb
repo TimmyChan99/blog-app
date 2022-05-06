@@ -2,7 +2,7 @@
 	<%= render partial: "partials/user", locals: { user: @user } %>
   <button class='btn'><%= link_to "create a post", new_user_post_path %></button>
 	<ul class="posts_list">
-	  <% @posts.each do |post| %>
+	  <% @posts.includes([:author]).each do |post| %>
 	    <%= render partial: "partials/post", locals: { post: post } %>
 	    <%= render partial: "partials/comment", locals: { comments: post.recent_comments } %>
 	  <% end %>	

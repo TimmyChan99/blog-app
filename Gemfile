@@ -71,6 +71,7 @@ group :development do
 
   # Diplay tables in database nicely
   gem 'hirb'
+  gem 'bullet'
 end
 
 group :test do

@@ -6,10 +6,10 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
-      flash[:success] = 'Post created successfully'
+      flash[:notice] = 'Post created successfully'
       redirect_to user_post_path(params[:user_id], params[:post_id])
     else
-      flash[:errors] = 'Error: Could not create a post'
+      flash[:alert] = 'Error: Could not create a post'
       redirect_back(fallback_location: { action: 'new', id: params[:user_id] })
     end
   end
