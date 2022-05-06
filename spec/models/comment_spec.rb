@@ -1,9 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-  
-  subject{ Comment.new(author_id: 2, post_id: 5, text: 'comment') }
-    
+  subject { Comment.new(author_id: 2, post_id: 5, text: 'comment') }
 
   it 'is valid with valid attributes' do
     expect(subject).to_not be_valid
