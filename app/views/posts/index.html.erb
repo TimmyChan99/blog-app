@@ -1,9 +1,10 @@
 <div class="posts_page">
-	<%= render partial: "users/user", locals: { user: @user } %>
+	<%= render partial: "partials/user", locals: { user: @user } %>
+  <button class='btn'><%= link_to "create a post", new_user_post_path %></button>
 	<ul class="posts_list">
 	  <% @posts.each do |post| %>
-	    <%= render partial: "users/post", locals: { post: post } %>
-	    <%= render partial: "posts/comment", locals: { comments: post.recent_comments } %>
+	    <%= render partial: "partials/post", locals: { post: post } %>
+	    <%= render partial: "partials/comment", locals: { comments: post.recent_comments } %>
 	  <% end %>	
 	</ul>	
 </div>

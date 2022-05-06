@@ -10,6 +10,17 @@
 	 </article>
 	</div>
 	<div class="post_comment">
-	    <%= render partial: "posts/comment", locals: { comments: @comments } %>
+	    <%= render partial: "partials/comment", locals: { comments: @comments } %>
 	</div>
+
+  <button class='btn'><%= link_to "Add new comment", new_user_post_comment_path(@post.author, @post.id) %></button>
+
+  
+		<%= form_with model: @comment, url: user_post_likes_path(@post.author, @post.id), scope: :comment, class: 'form' do |f| %>
+		 <%= f.submit "Like the post", class: 'btn'%>
+		<% end %>
+	
+
+	<%= render partial: "partials/flashmsg" %>
+
 </div>

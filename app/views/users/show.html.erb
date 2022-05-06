@@ -12,7 +12,7 @@
 	</div>
 	<ul class="posts_list">
 	  <% @posts.each do |post| %>
-		   <%= render partial: "users/post", locals: { post: post } %>
+		   <%= render partial: "partials/post", locals: { post: post } %>
 	  <% end %>
 	</ul>	
 	<button><%= link_to "See all posts", user_posts_path(@user.id) %></button>	

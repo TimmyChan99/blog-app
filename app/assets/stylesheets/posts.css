@@ -62,3 +62,47 @@ li {
 .post article {
   margin-top: 30px;
 }
+
+.btn,
+.flash_msg {
+  margin: 30px auto;
+  background: none;
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+  width: 150px;
+}
+
+.form {
+  margin: auto;
+}
+
+.posts_page .btn {
+  position: relative;
+  left: 40vw;
+}
+
+.headline {
+  margin: 50px;
+}
+
+.the_form {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+  width: 70vw;
+  margin: 50px auto;
+}
+
+.the_form textarea,
+.the_form input {
+  width: 60%;
+  height: 60px;
+}
+
+.the_form input[type=submit] {
+  background: none;
+  margin-top: 10px;
+  height: 40px;
+}
