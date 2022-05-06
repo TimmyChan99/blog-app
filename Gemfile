@@ -70,6 +70,7 @@ group :development do
   gem 'binding_of_caller', '~> 1.0'
 
   # Diplay tables in database nicely
+  gem 'bullet'
   gem 'hirb'
 end
 
