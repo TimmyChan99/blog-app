@@ -1,7 +1,7 @@
 <div class="comments">
-<% comments.each do |comment| %>
+<% comments.includes([:author]).each do |comment| %>
 <span>
-	<%= @users[comment.author_id - 1].name %> :
+	<%= comment.author.name %> :
 </span>
 <%= comment.text %>
 	<br>

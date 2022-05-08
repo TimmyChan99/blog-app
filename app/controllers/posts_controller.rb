@@ -8,7 +8,6 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @comments = @post.recent_comments
-    @users = User.all
   end
 
   def new
