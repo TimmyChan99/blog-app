@@ -69,8 +69,8 @@ group :development do
   gem 'better_errors', '~> 2.9', '>= 2.9.1'
   gem 'binding_of_caller', '~> 1.0'
 
-  # Diplay tables in database nicely
   gem 'bullet'
+  # Diplay tables in database nicely
   gem 'hirb'
 end
 
