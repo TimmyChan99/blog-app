@@ -1,6 +1,6 @@
 <div class="post_page">
 	<div class="post">
-	  <h3><%= @post.title %> by <%= @users[@post.author_id - 1].name%></h3>
+	  <h3><%= @post.title %> by <%= @post.author.name%></h3>
 	  <small class="comments_likes">
 	    Comments: <%= @post.comments_counter || 0 %>, 
 	    <span>Likes: <%= @post.likes_counter || 0 %></span>
