@@ -11,7 +11,7 @@
 		<article> <%= @user.bio %> </article>
 	</div>
 	<ul class="posts_list">
-	  <% @posts.each do |post| %>
+	  <% @posts.includes([:author]).each do |post| %>
 		   <%= render partial: "partials/post", locals: { post: post } %>
 	  <% end %>
 	</ul>	
