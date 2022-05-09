@@ -13,11 +13,11 @@
 	    <%= render partial: "partials/comment", locals: { comments: @comments } %>
 	</div>
 
-  <button class='btn'><%= link_to "Add new comment", new_user_post_comment_path(@post.author, @post.id) %></button>
+  <button class='btn btn-outline-dark'><%= link_to "Add new comment", new_user_post_comment_path(@post.author, @post.id) %></button>
 
   
 		<%= form_with model: @comment, url: user_post_likes_path(@post.author, @post.id), scope: :comment, class: 'form' do |f| %>
-		 <%= f.submit "Like the post", class: 'btn'%>
+		 <%= f.submit "Like the post", class: 'btn btn-outline-dark'%>
 		<% end %>
 	
 
