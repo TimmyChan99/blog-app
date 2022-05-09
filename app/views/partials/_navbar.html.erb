@@ -1,9 +1,8 @@
-<nav>
+<nav class="navbar navbar-light bg-light py-0" style="background-color: #e3f2fd;">
 <% if user_signed_in? %>
-<h2>Test</h2>
-    <%= button_to 'Log out', destroy_user_session_path, method: :delete %>
+    <%= button_to 'Log out', destroy_user_session_path, method: :delete%>
     <% else %>
-    <%= link_to 'Register', new_user_registration_path %>
-    <%= link_to 'Sign in', user_session_path %>
-    <% end %>
+    <%= link_to 'Register', new_user_registration_path, class: "btn btn-outline-dark" %>
+    <%= link_to 'Sign in', user_session_path, class: "btn btn-outline-dark"%>
+	 <% end %>
 </nav>
