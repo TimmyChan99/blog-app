@@ -4,6 +4,7 @@
 	<%= comment.author.name %> :
 </span>
 <%= comment.text %>
+<%= button_to 'Delete', user_post_comment_path(comment.post.author, comment.post.id, comment.id), method: :delete, class: 'btn btn-outline-dark' %>
 	<br>
 <% end %>
 </div>
