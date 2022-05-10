@@ -83,3 +83,4 @@ end
 
 # Devise
 gem 'devise'
+gem 'cancancan'
