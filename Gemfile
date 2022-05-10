@@ -81,5 +81,5 @@ group :test do
   gem 'webdrivers'
 end
 
-#Devise
+# Devise
 gem 'devise'
