@@ -4,14 +4,15 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+    console
 
-    # current_user ||= User.new # guest user (not logged in)
+    user ||= User.new # guest user (not logged in)
 
-    #   if current_user.is?("admin") 
-    #     can :manage, :all
-    #   else
-    #     can :destroy, Post, author_id: current_user.id
-    #   end
+      if user.is?("admin") 
+        can :manage, :all
+      else
+        can :destroy, Post, author_id: user.id
+      end
 
 
     # Define abilities for the passed in user here. For example:
