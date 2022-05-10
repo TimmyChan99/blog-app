@@ -81,6 +81,17 @@ li {
   min-width: 300px;
 }
 
+.comment_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.comment_container .btn {
+  min-width: auto;
+  margin: 0;
+}
+
 .headline {
   margin: 50px;
 }
