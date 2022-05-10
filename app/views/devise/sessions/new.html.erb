@@ -4,7 +4,7 @@
   <div class="card-body">
     <h2 class="card-title">Log in</h2>
 
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= form_for(resource, as: resource_name, html: {'data-turbo' => "false"}, url: session_path(resource_name)) do |f| %>
       <div class="field">
         <%= f.label :email, class: "visually-hidden" %><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control",  placeholder: "Email" %>
