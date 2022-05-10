@@ -80,3 +80,6 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+
+# Devise
+gem 'devise'

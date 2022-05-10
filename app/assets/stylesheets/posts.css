@@ -77,6 +77,10 @@ li {
   margin: auto;
 }
 
+.btn {
+  min-width: 300px;
+}
+
 .posts_page .btn {
   position: relative;
   left: 40vw;
