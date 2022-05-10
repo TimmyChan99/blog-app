@@ -9,7 +9,6 @@ class User < ApplicationRecord
 
 
   validates :email, confirmation: true
-  validates :email_confirmation, presence: { message: "must be given correctly" }
 
   validates :name, presence: true
   validates :posts_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
