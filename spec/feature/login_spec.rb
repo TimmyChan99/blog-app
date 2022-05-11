@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Hello world', type: :feature do
-  describe 'index page' do
+  describe 'loging page' do
     it 'Should access the log in page' do
       visit 'login'
       expect(page).to have_content('Log in')
