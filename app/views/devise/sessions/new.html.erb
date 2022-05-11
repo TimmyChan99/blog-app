@@ -7,12 +7,12 @@
     <%= form_for(resource, as: resource_name, html: {'data-turbo' => "false"}, url: session_path(resource_name)) do |f| %>
       <div class="field">
         <%= f.label :email, class: "visually-hidden" %><br />
-        <%= f.email_field :email, disabled: true, autofocus: true, autocomplete: "email", class: "form-control",  placeholder: "Email" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control",  placeholder: "Email" %>
       </div>
     
       <div class="field">
         <%= f.label :password, class: "visually-hidden" %><br />
-        <%= f.password_field :password, disabled: true, autocomplete: "current-password", class: "form-control",  placeholder: "Password" %>
+        <%= f.password_field :password, autocomplete: "current-password", class: "form-control",  placeholder: "Password" %>
       </div>
     
       <% if devise_mapping.rememberable? %>
