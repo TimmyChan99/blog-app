@@ -19,6 +19,7 @@ class CommentsController < ApplicationController
     @comment.destroy
     flash[:alert] = 'Deleted comment'
     redirect_to user_post_path(params[:user_id], params[:post_id])
+    authorize! :destroy, @comment
   end
 
   private
@@ -27,5 +28,6 @@ class CommentsController < ApplicationController
     c = params.require(:comment).permit(:text)
     c[:post_id] = Post.find(params[:post_id]).id
     c[:author_id] = current_user.id
+    c
   end
 end
