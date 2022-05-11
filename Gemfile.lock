@@ -82,7 +82,11 @@ GEM
     bullet (7.0.1)
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.11)
+<<<<<<< HEAD
     cancancan (1.17.0)
+=======
+    cancancan (3.3.0)
+>>>>>>> c1f8e3772f718679126f0847ef0d148fa9f7d24e
     capybara (3.37.1)
       addressable
       matrix
@@ -266,7 +270,11 @@ DEPENDENCIES
   binding_of_caller (~> 1.0)
   bootsnap
   bullet
+<<<<<<< HEAD
   cancancan (~> 1.9)
+=======
+  cancancan
+>>>>>>> c1f8e3772f718679126f0847ef0d148fa9f7d24e
   capybara
   debug
   devise

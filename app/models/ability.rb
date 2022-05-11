@@ -1,7 +1,18 @@
+# frozen_string_literal: true
+
 class Ability
   include CanCan::Ability
 
   def initialize(user)
+    console
+
+    user ||= User.new # guest user (not logged in)
+
+      if user.is?("admin") 
+        can :manage, :all
+      else
+        can :destroy, Post, author_id: user.id
+      end
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)

@@ -31,6 +31,7 @@ class PostsController < ApplicationController
      @post = Post.find(params[:id])
      @post.destroy
      redirect_to user_posts_path(@post.author)
+     authorize! :destroy, @post
   end
 
   private
