@@ -14,7 +14,9 @@ RSpec.describe 'Hello world', type: :feature do
     end
 
     it "Should see all image for all users" do
-      page.has_selector?('img', count:2)
+      images = page.all('img')
+      users_profile = page.all('div h2')
+      expect(images.size).to eql(users_profile.size)
     end
 
     it "Should see each user's post number" do
