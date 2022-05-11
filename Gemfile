@@ -13,7 +13,7 @@ gem 'sprockets-rails'
 gem 'pg', '~> 1.1'
 
 # install cancan
-gem 'cancancan', '~> 1.9'
+# gem 'cancancan', '~> 1.9'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
@@ -85,5 +85,5 @@ group :test do
 end
 
 # Devise
-gem 'devise'
 gem 'cancancan'
+gem 'devise'
