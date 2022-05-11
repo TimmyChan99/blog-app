@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @users = User.all
     @user = User.find(params[:user_id])
@@ -25,6 +27,12 @@ class PostsController < ApplicationController
       flash[:alert] = 'Error: Could not create a post'
       redirect_back(fallback_location: { action: 'new', id: params[:user_id] })
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to user_posts_path(@post.author)
   end
 
   private

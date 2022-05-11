@@ -82,6 +82,7 @@ GEM
     bullet (7.0.1)
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.11)
+    cancancan (3.3.0)
     capybara (3.37.1)
       addressable
       matrix
@@ -148,8 +149,6 @@ GEM
       net-protocol
       timeout
     nio4r (2.5.8)
-    nokogiri (1.13.6-x64-mingw-ucrt)
-      racc (~> 1.4)
     nokogiri (1.13.6-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.13.6-x86_64-linux)
@@ -272,6 +271,7 @@ DEPENDENCIES
   binding_of_caller (~> 1.0)
   bootsnap
   bullet
+  cancancan
   capybara
   debug
   devise

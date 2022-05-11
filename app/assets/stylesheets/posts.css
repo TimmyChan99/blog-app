@@ -81,9 +81,15 @@ li {
   min-width: 300px;
 }
 
-.posts_page .btn {
-  position: relative;
-  left: 40vw;
+.comment_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.comment_container .btn {
+  min-width: auto;
+  margin: 0;
 }
 
 .headline {

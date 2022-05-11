@@ -1,9 +1,17 @@
 <div class="comments">
-<% comments.includes([:author]).each do |comment| %>
-<span>
-	<%= comment.author.name %> :
-</span>
-<%= comment.text %>
-	<br>
-<% end %>
+		  <% comments.includes([:post], [:author]).each do |comment| %>
+		  <div class="comment_container">
+				<div>
+					<span>
+					 <%= comment.author.name %> :
+					</span>
+					<%= comment.text %>
+				</div>
+				<% if can? :destroy, comment %>
+				<%= button_to 'Delete', user_post_comment_path(comment.post.author, comment.post.id, comment.id), method: :delete, class: 'btn btn-outline-dark' %>
+				<% end %>
+			</div>
+			<br>
+		<% end %>
 </div>
+

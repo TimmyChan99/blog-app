@@ -13,13 +13,17 @@
 	    <%= render partial: "partials/comment", locals: { comments: @comments } %>
 	</div>
 
-  <button class='btn btn-outline-dark'><%= link_to "Add new comment", new_user_post_comment_path(@post.author, @post.id) %></button>
-
-  
-		<%= form_with model: @comment, url: user_post_likes_path(@post.author, @post.id), scope: :comment, class: 'form' do |f| %>
-		 <%= f.submit "Like the post", class: 'btn btn-outline-dark'%>
-		<% end %>
-	
+ <div class="buttons">
+		<button class='btn btn-outline-dark'><%= link_to "Add new comment", new_user_post_comment_path(@post.author, @post.id) %></button>
+	 
+	 <% if can? :destroy, @post %>
+		 <%= button_to 'Delete post', user_post_path(@post.author, @post.id), method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-outline-dark' %>
+	 <% end %>
+	 
+		 <%= form_with model: @comment, url: user_post_likes_path(@post.author, @post.id), scope: :comment, class: 'form' do |f| %>
+			<%= f.submit "Like the post", class: 'btn btn-outline-dark'%>
+		 <% end %> 
+ </div>
 
 	<%= render partial: "partials/flashmsg" %>
 
