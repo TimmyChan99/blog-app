@@ -29,7 +29,8 @@ RSpec.describe 'Hello world', type: :feature do
     end
 
     it 'Should redirect to the root path if email or password is filled with the correct data' do
-      user = User.create!(name: 'Topaz', photo: '', bio: '', posts_counter: 0, created_at: Time.now, role: 'admin', confirmed_at: Time.now, email: "user@gmail.com", password: '111111')
+      user = User.create!(name: 'Topaz', photo: '', bio: '', posts_counter: 0, created_at: Time.now, role: 'admin',
+                          confirmed_at: Time.now, email: 'user@gmail.com', password: '111111')
       visit 'login'
       fill_in 'Email', with: user.email
       fill_in 'Password', with: user.password

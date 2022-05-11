@@ -3,8 +3,9 @@ require 'rails_helper'
 RSpec.describe 'Blog app', type: :feature do
   describe ' user index show page' do
     before(:each) do
-      @user1 = User.create!(name: 'User1', photo: '', bio: 'this is the bio', posts_counter: 2, created_at: Time.now, role: 'admin', confirmed_at: Time.now, email: "user1@gmail.com", password: '000000', id: 1)
-      @post = @user1.posts.create!(title: "Sample", text: 'lolololo')
+      @user1 = User.create!(name: 'User1', photo: '', bio: 'this is the bio', posts_counter: 2, created_at: Time.now,
+                            role: 'admin', confirmed_at: Time.now, email: 'user1@gmail.com', password: '000000', id: 1)
+      @post = @user1.posts.create!(title: 'Sample', text: 'lolololo')
       visit user_posts_path(@user1)
     end
 
@@ -14,7 +15,7 @@ RSpec.describe 'Blog app', type: :feature do
       expect(images.size).to eql(users_profile.size)
     end
 
-    it "Should see the username of the user" do
+    it 'Should see the username of the user' do
       expect(page).to have_content(@user1.name)
     end
 
@@ -40,6 +41,5 @@ RSpec.describe 'Blog app', type: :feature do
     #   click_button "See all posts"
     #   expect(page).to have_current_path(user_posts_path(@user1))
     # end
-
   end
 end
