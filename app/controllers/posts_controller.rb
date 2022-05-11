@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @users = User.all
     @user = User.find(params[:user_id])
@@ -31,7 +33,6 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
     redirect_to user_posts_path(@post.author)
-    authorize! :destroy, @post
   end
 
   private
