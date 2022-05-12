@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Hello world', type: :feature do
+RSpec.describe 'Blog app', type: :feature do
   describe 'loging page' do
     it 'Should access the log in page' do
       visit 'login'
