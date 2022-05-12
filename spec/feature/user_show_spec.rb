@@ -39,7 +39,7 @@ RSpec.describe 'Blog app', type: :feature do
     end
 
     it 'Should redirects to that post\'s show page.' do
-      click_link "See all posts"
+      click_link 'See all posts'
       expect(page).to have_current_path(user_posts_path(@user1.id))
     end
 
