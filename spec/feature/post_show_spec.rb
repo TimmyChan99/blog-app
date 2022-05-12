@@ -1,4 +1,6 @@
-RSpec.describe 'Hello world', type: :feature do
+require 'rails_helper'
+
+RSpec.describe 'Blog app', type: :feature do
   describe ' user index index page' do
     before(:each) do
       @user1 = User.create!(name: 'User1', photo: '', bio: '', posts_counter: 3, created_at: Time.now, role: 'admin',
