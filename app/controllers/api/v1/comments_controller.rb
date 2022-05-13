@@ -16,5 +16,12 @@ class Api::V1::CommentsController < ApplicationController
     end
   end
 
- 
+  private
+
+  def comment_params
+    c = params.permit(:text)
+    c[:post_id] = Post.find(params[:post_id]).id
+    c[:author_id] = current_user.id
+    c
+  end
 end
