@@ -6,4 +6,15 @@ class Api::V1::CommentsController < ApplicationController
     render json: JSON.pretty_generate(@comments.as_json)
   end
 
+  def create
+    @comment = Comment.new(comment_params)
+
+    if @comment.save
+      render json: { message: 'Comment created successfuly' }, status: :created
+    else
+      render json: { message: 'Failed creating a comment' }, status: :unprocessable_entity
+    end
+  end
+
+ 
 end
