@@ -3,9 +3,13 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
 
+  skip_before_action :verify_authenticity_token, if: :json_request?
+
   before_action :update_allowed_parameters, if: :devise_controller?
 
   before_action :authenticate_request
+
+  # skip_before_action :authenticate_request, if: :html_request?
 
   protected
 
@@ -22,4 +26,12 @@ class ApplicationController < ActionController::Base
     decoded = jwt_decode(header)
     @current_user = User.find(decoded[:user_id])
   end
+
+  def json_request?
+    request.format.json?
+  end
+
+  # def html_request?
+  #   request.format.html?
+  # end
 end
