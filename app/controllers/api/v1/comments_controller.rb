@@ -1,4 +1,5 @@
 class Api::V1::CommentsController < ApplicationController
+	before_action :authenticate_request, only: [:create]
 	skip_before_action :verify_authenticity_token
 	def index
 		@comments = Comment.where(['post_id = :id', { id: params[:post_id].to_s }])
@@ -17,7 +18,7 @@ class Api::V1::CommentsController < ApplicationController
 
 	private
     def comment_params 
-			c = params.require(:comment).permit(:text)
+			c = params.permit(:text)
     c[:post_id] = Post.find(params[:post_id]).id
     c[:author_id] = current_user.id
     c
