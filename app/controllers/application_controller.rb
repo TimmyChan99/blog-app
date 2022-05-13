@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   before_action :authenticate_request
 
-  # skip_before_action :authenticate_request, if: :html_request?
+  skip_before_action :authenticate_request, if: :html_request?
 
   protected
 
@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
     request.format.json?
   end
 
-  # def html_request?
-  #   request.format.html?
-  # end
+  def html_request?
+    request.format.html?
+  end
 end
