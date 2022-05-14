@@ -11,7 +11,7 @@ class Ability
       can :read, Comment
       can :read, User
       can :read, Like
-      can :destroy, Post, author_id: user.id
+      can :manage, Post, author_id: user.id
       can :destroy, Comment, author_id: user.id
     end
     # Define abilities for the passed in user here. For example:

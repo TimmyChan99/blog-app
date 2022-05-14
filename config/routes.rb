@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
   
    root "users#index"
+    post '/api/v1/auth/login', to: 'authentication#login'
+   namespace :api, defaults: {format: 'json'} do
+     namespace :v1 do
+       resources :users, only: [:show, :create] do
+         resources :posts, only: [:index] do
+           resources :comments, only: [:index, :create]
+         end
+       end
+     end
+   end
 
    devise_for :users,
     path: '', # optional namespace or empty string for no space
