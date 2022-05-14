@@ -89,3 +89,5 @@ end
 # Devise
 gem 'cancancan'
 gem 'devise'
+
+gem 'rswag'
