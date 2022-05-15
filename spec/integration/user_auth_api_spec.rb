@@ -26,10 +26,10 @@ describe 'Register and Login API' do
       end
 
       response '201', 'user created' do
-        let(:user) { { name: 'user', email: 'user@dev.co', password: '123456' } }
+        let(:user) { { name: 'user1', email: 'user1@dev.co', password: '123456' } }
         run_test! do |response|
           data = JSON.parse(response.body)
-          expect(data['name']).to eq 'user'
+          expect(data['name']).to eq 'user1'
         end
       end
       
@@ -59,6 +59,14 @@ describe 'Register and Login API' do
             decoded = JWT.decode(data['token'], SECRET_KEY)[0]
             expect(decoded['user_id']).to eq 10
           end
+      end
+
+      response '401', 'unauthorized user' do
+        let(:user) { { email: 'user2@dev.co', password: '123456' } }
+        run_test! do |response|
+            data = JSON.parse(response.body)
+            expect(data['error']).to eq 'unauthorized'
+        end
       end
     end
   end
