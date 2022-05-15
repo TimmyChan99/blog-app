@@ -36,6 +36,31 @@ describe 'Register and Login API' do
     end
   end
 
-  
+  path '/api/v1/auth/login' do
+    
+    post 'Log in for an existing user' do
+      tags 'user'
+      consumes 'application/json'
+      parameter name: :user, in: :body, schema: {
+        type: :object,
+        properties: {
+          email: { type: :string },
+          password: { type: :string }
+        },
+        required: ['email', 'password']
+      }
+
+      response '200', 'loged in' do
+       @user = User.create(name: 'user', email: 'user@dev.co', password: '123456')
+        let(:user) { { email: 'user@dev.co', password: '123456' } }
+        run_test! do |response|
+            data = JSON.parse(response.body)
+            SECRET_KEY = Rails.application.secrets.secret_key_base
+            decoded = JWT.decode(data['token'], SECRET_KEY)[0]
+            expect(decoded['user_id']).to eq 10
+          end
+      end
+    end
+  end
 end
  
