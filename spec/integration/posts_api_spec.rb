@@ -1,6 +1,6 @@
 require 'swagger_helper'
 
-RSpec.describe 'Posts Endpoints' do
+describe 'Posts Endpoints' do
  
   path '/api/v1/users/{id}/posts' do
 
@@ -14,7 +14,7 @@ RSpec.describe 'Posts Endpoints' do
         @user = User.create(id: 1, name: 'user1', email: 'user1@dev.co', password: '123456')
         let(:Authorization) { "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTMyNDQwMDd9.mnFQwhJygd-6SxWrlnc6pf9X-1_-cqQKCjR0ydOX7zY" }
         let(:id) { '1' }
-				run_test! 
+				run_test!
       end
       
     end

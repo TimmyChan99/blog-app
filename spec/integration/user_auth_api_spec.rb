@@ -51,13 +51,13 @@ describe 'Register and Login API' do
       }
 
       response '200', 'loged in' do
-       @user = User.create(name: 'user', email: 'user@dev.co', password: '123456')
+       @user = User.create(id: 1, name: 'user', email: 'user@dev.co', password: '123456')
         let(:user) { { email: 'user@dev.co', password: '123456' } }
         run_test! do |response|
             data = JSON.parse(response.body)
             SECRET_KEY = Rails.application.secrets.secret_key_base
             decoded = JWT.decode(data['token'], SECRET_KEY)[0]
-            expect(decoded['user_id']).to eq 10
+            expect(decoded['user_id']).to eq 1
           end
       end
 
